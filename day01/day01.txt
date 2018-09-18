@@ -105,6 +105,29 @@ git最初是为了管理Linux内核代码而诞生的
   10.查看本地仓库的状态
   11.将本地仓库的内容提交到master上
 
+四个状态,三大区域
+  未修改(Origin)
+  已修改(Modified)&未追踪(Untracked)
+  已暂存(Staged)
+  已提交(Committed)
+  已推送(Pushed)
+撤回提交的修改
+  撤回工作区的修改
+    $ git checkout # 撤销项目下的所有修改
+    $ git checkout . # 撤销当前文件夹下的所有修改
+    $ git checkout xx/xx.py xx/xx2.py # 撤销某几个文件的修改
+    $ git clean -f # untracked状态,撤销新增的文件
+    $ git clean -df # untracked状态,撤销新增的文件和文件夹
+  撤回暂存区的修改
+    $ git diff --cached # 显示暂存区和master的差异
+    $ git reset # 暂存区的修改恢复到工作区
+  撤回master的修改
+    $ git reset --hard origin/master # 回退与本地远程仓库一致
+    $ git reset --hard HEAD # 回退到master上一个版本
+    $ git reset --hard <hash code> # 回退到任意版本
+
+    $ git push -f orgin master # 强制覆盖远程分支
+
 
 
 

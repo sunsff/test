@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../libs/angular.min.js"></script>
+</head>
+<body ng-app="app">
+  <div ng-controller="ctrl">
+    字符串:{{str}}<br>
+    数字:{{num}}<br>
+    数组:{{arr}}<br>
+    对象:{{obj}}<br>
+    数组中第一个元素:{{arr[0]}}<br>
+    {{obj.one}}
+  </div>
+</body>
+<script>
+  var app = angular.module('app',[]);
+  app.controller('ctrl',['$scope',function($scope){
+    $scope.str = 'qwer';
+    $scope.num = 9527;
+    $scope.arr = ['A',8,true];
+    $scope.obj = {one:1,two:2};
+  }]);
+</script>
+</html>

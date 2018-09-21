@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <script src='../libs/angular.min.js'></script>
+</head>
+
+<body ng-app='app'>
+  <ul ng-controller="ctrl">
+    <li>
+      uppercase:{{message | uppercase}}
+    </li>
+    <li>
+      uppercase:{{message | lowercase}}
+    </li>
+    <li>
+      date:{{time | date:"yyyy/MM/dd HH:mm:ss"}}
+    </li>
+  </ul>
+</body>
+<script>
+  var app = angular.module('app', []);
+  app.controller("ctrl",["$scope",function($scope){
+    $scope.message = "good good study,day day up";
+    $scope.time = new Date();
+  }]);
+</script>
+
+</html>

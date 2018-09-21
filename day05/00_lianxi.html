@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <script src='../libs/angular.min.js'></script>
+</head>
+<body ng-app='app'>
+  <div ng-controller="ctrl">
+    <ul>
+      <li>
+        <input type="text" ng-model="msg"><br>
+        {{msg | uppercase}}<br>
+        {{msg | lowercase}}<br>
+      </li>
+      <li>
+        {{'abcdefg' | limitTo:-5 | uppercase}}
+      </li>
+      <li>
+        <input type="text" ng-model="msg2"><br>
+        {{msg2 | number:1}}<br>
+      </li>
+      <li>
+        {{time | date:"yyyy年MM月dd日 HH时mm分ss秒"}}
+      </li>
+      <li>
+        {{obj | orderBy:"id":false}}<br>
+        {{obj | orderBy:"-id"}}<br>
+        {{obj | orderBy:["-age","+id"]}}<br>
+      </li>
+      <li>
+        {{obj | filter:{name:'a'} }}<br>
+      </li>
+    </ul>
+  </div>
+</body>
+<script>
+  var app = angular.module('app', []);
+  app.controller("ctrl",["$scope",function($scope){
+    $scope.time = new Date();
+    $scope.obj = [
+      {id:101,name:"Mike",age:22,grade:'a'},
+      {id:103,name:"Jack",age:22,grade:'b'},
+      {id:105,name:"Rose",age:24,grade:'c'},
+      {id:102,name:"Allen",age:24,grade:'a'},
+      {id:104,name:"Lily",age:22,grade:'b'}
+    ]
+  }]);
+</script>
+</html>

@@ -28,7 +28,7 @@
     第二个表示依赖关系,推断式注入直接写function,表示集体的内容
   */
 
-  app.controller('self',function($filter){
+  app.factory('self',function($filter){
     var d = $filter('date');
     // 定义方法
     function getDate(){

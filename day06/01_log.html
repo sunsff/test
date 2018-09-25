@@ -8,20 +8,16 @@
   <script src='../libs/angular.min.js'></script>
 </head>
 <body ng-app='app'>
-  {{"abcd" | selfFilter}}
+  <div ng-controller='ctrl'></div>
 </body>
 <script>
   var app = angular.module('app', []);
-  // 创建自定义过滤器
-  // 通过调用filter方法
-  // 将过滤的数据改成首字母大写
-  app.filter("selfFilter",function(){
-    return function(str){
-      // 处理传递进来的字符串
-      var arr = str.split("");
-      arr[0] = arr[0].toUpperCase();
-      return arr.join("");
-    }
+  app.controller('ctrl',function($log){
+    $log.log('打印日志信息');
+    $log.info('打印普通信息');
+    $log.warn('打印警告信息');
+    $log.error('打印错误信息');
+    $log.debug('打印调错信息');
   });
 </script>
 </html>

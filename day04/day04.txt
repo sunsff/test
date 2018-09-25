@@ -8,13 +8,16 @@
     ng-model: 定义绑定数据的属性名称
     ng-controller: 定义控制器的作用范围
     ng-show/ng-hide: 显示或隐藏某个元素
-    ng-if: 判定指定该指令的元素是否存在
+    ng-if: 判定指定该指令的元素是否存在(会删除节点)
     ng-bind: 绑定数据,作用与{{表达式}}一样
     ng-checked: 设置默认选中
     ng-src: 引用外部文件使用
     ng-readonly:
     ng-disabled: 只读,不可修改
-    ng-repeat: 遍历数组,并将数组的每一个元素以当前节点单独显示出来
+    ng-repeat: 遍历数组,并将数组的每一个元素以当前节点单独显示出来(数组不能重复,重复要加track by $index)
+      <li ng-repeat="stu in stus track by $index">
+        {{$index}}.{{stu}}
+      </li>
     ng-class: 对HTML中class的封装
     ng-switch:
     ng-include: 引入外部页面

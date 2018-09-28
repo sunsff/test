@@ -3,7 +3,7 @@
   1. $timeout,$interval
     类似于window中的方法
   2. $filter
-    该服务可以当成9中过滤器来使用
+    该服务可以当成9种过滤器来使用
   3. $log服务
     日志服务,用于控制台信息的输出
   4. $location服务

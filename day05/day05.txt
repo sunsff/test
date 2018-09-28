@@ -13,7 +13,7 @@
   内置过滤器:
     1. uppercase
     2. lowercase
-    3. date
+    3. date 时间格式
     4. currency
     5. json 将传入的对象以json格式展示
     6. filter 从数组中选择一个子集

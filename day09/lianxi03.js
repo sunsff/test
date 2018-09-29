@@ -5,8 +5,8 @@ fs.readdir("./a",function(err,files){
    console.log(err); 
    return;
   }
-  for(var i=0;i<files.length;i++){
-    console.log(files[i]);
+  // for(var i=0;i<files.length;i++){
+  //   console.log(files[i]);
     // var result = fs.statsSync("./a/"+files[i]);
     // consoe.log(result);
     
@@ -20,6 +20,7 @@ fs.readdir("./a",function(err,files){
     }); */
 
     // 递归
+    console.log('文件:');
     (function a(i){
       // 先判定递归结束的条件
       if(i==files.length){ // 当i与数组长度一样,说明遍历结束
@@ -33,9 +34,7 @@ fs.readdir("./a",function(err,files){
           return;
         }
         if(stats.isFile()){
-          console.log(files[i]+"是一个文件");
-        }else{
-          console.log(files[i]+"是一个文件夹");
+          console.log(files[i]);
         }
         a(++i); // 自调
       });
@@ -43,7 +42,8 @@ fs.readdir("./a",function(err,files){
       // console.log(++i);
       // 自调
       // a(i)
-    })(0)
+    })(0);
 
-  }
+
+  // }
 });

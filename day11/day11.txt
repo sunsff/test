@@ -43,4 +43,4 @@
 
 作业:
   1. 重做formidable上传图片
-  2. 使用
+  2. 使用express重做formidable

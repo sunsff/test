@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>我的相册</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    a{
+      text-decoration: none;
+      color: rgb(66, 38, 66);
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .div_head{
+      background: #adabab;
+      margin-bottom: 5px;
+      padding: 5px 20px;
+    }
+    h3{
+      margin: 10px 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="div_head">
+    <a class="navbar-brand" href="/">我的相册</a>
+    <a href="/toUpload">上传图片</a>
+    <a href="/newDir">新建相册</a>
+  </div>
+  <div style="padding-left: 20px;">
+      <form action="/doUpload" method="POST" enctype="multipart/form-data">
+        <h3>选择上传到的文件夹</h3>
+        <select style="width:180px;height:30px;font-size: 18px;" class="form-control" name="dirName">
+          <% for(var i = 0;i < dirs.length;i++){ %>
+            <option value="<%= dirs[i] %>"><%= dirs[i] %></option>
+          <% } %>
+        </select>
+        <br>
+        <h3>选择图片</h3>
+        <input style="font-size: 16px;" class="pic" type="file" name="pic">
+        <br>
+        <button style="width: 80px;height: 30px;margin-top: 10px;background: #FFF;border: 1px solid #000;border-radius: 10px;font-size: 20px;" type="submit" class="btn btn-default">上传</button>
+      </form>
+
+  </div>
+</body>
+</html>

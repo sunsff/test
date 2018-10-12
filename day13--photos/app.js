@@ -10,4 +10,6 @@ app.use(express.static("./public"));
 app.use(express.static("./uploads"));
 
 app.get("/",route.showIndex);
-app.get("toUpload",route.toUpload);
+app.get("/show/:dirName",route.showPics);
+app.get("/toUpload",route.toUpload); // 跳转上传页
+app.post("/doUpload",route.doUpload);

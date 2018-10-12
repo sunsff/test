@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>我的相册</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    a{
+      text-decoration: none;
+      color: rgb(66, 38, 66);
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .div_head{
+      background: #adabab;
+      margin-bottom: 5px;
+      padding: 5px 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="div_head">
+    <a class="navbar-brand" href="/">我的相册</a>
+    <a href="/toUpload">上传图片</a>
+    <a href="/newDir">新建相册</a>
+  </div>
+  <div>
+    <ul type="none">
+      <% for(var i = 0;i < pics.length;i++){ %>
+        <li style="float:left">
+          <img src="/<%= dirName %>/<%= pics[i] %>">
+          <span style="display: block;text-align: center;"><%= pics[i] %></span>
+        </li>
+      <% } %>
+    </ul>
+  </div>
+</body>
+</html>

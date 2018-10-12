@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      padding: 5px 10px;
+    }
+    input{
+      /* border: 1px solid black; */
+    }
+    .btn_tj{
+      width: 80px;
+      height: 30px;
+      margin-top: 10px;
+      background: #FFF;
+      border: 1px solid #000;
+      border-radius: 10px;
+      font-size: 20px;
+    }
+    hr{
+      margin: 5px 0;
+    }
+    .list_head{
+      list-style-type: none;
+    }
+    .list_head li{
+      margin-top: 5px;
+    }
+    .list_head li span.xingming{
+      font-size: 18px;
+    }
+    .list_head li .ipt{
+      width: 180px;
+      height: 20px;
+      margin: 5px 0;
+    }
+    .list_cov{
+      list-style-type: none;
+    }
+    .list_cov li{
+      padding-left: 10px;
+    }
+    .list_cov li span.username{
+      color: red;
+    }
+    .list_cov li.time{
+      font-size: 12px;
+      color: rgb(104, 104, 104);
+    }
+  </style>
+</head>
+<body>
+  <form action="/tijiao">
+    <ul class="list_head">
+      <li><h1>留言板</h1></li>
+      <li><span class="xingming">姓名: </span><input class="ipt" type="text" name="username"></li>
+      <li><textarea name="liuyan" id="" cols="30" rows="5"></textarea></li>
+      <li><input class="btn_tj" type="submit" value="提交"></li>
+    </ul>
+  </form>
+  
+  <% for(var i=0;i<msg.length;i++){ %>
+    <hr>
+    <ul class="list_cov">
+      <!-- <li><img src="./public/images/headPhoto.png" alt=""></li> -->
+      <li><span class="username"><%= msg[i].username %></span>说:</li>
+      <li>&nbsp;&nbsp;<%= msg[i].message %></li>
+      <li class="time">(<%= msg[i].time %>)</li>
+      <li>
+        <button>修改</button>
+        <button>删除</button>
+      </li>
+    </ul>
+  <% } %>
+</body>
+</html>

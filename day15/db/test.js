@@ -1,11 +1,16 @@
 var db = require("./db.js");
 
+db.find('student',{size:2},function(err,docs){
+  console.log(err);
+  console.log(docs);
+});
+
 //删除数据
-var filter = {id:102};
+/* var filter = {id:102};
 db.del("student",filter,function(err,result){
   console.log(err);
   console.log(result);
-});
+}); */
 
 // 测试修改数据
 /* var filter = {id:111};

@@ -60,3 +60,21 @@ exports.doUpload = function(req,res){
     }
   });
 }
+// 跳转上传页面
+exports.newDir = function(req,res){
+  res.render("newDir");
+}
+// 新建相册
+exports.doCreate = function(req,res){
+  // console.log(req.body);
+  var dirName = req.body.dirName;
+  file.createDir(dirName,function(err){
+    if(err){
+      console.log(err);
+      res.send("创建相册失败");
+    }else{
+      // 创建成功,跳转页面
+      res.redirect("/");
+    }
+  });
+}

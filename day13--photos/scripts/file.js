@@ -18,3 +18,9 @@ exports.save = function(oldPath,newPath,callback){
     callback(err);
   });
 }
+// 新建文件夹
+exports.createDir = function(dirName,callback){
+  fs.mkdir("./uploads/"+dirName,function(err){
+    callback(err);
+  });
+}

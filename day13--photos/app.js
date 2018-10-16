@@ -13,3 +13,5 @@ app.get("/",route.showIndex);
 app.get("/show/:dirName",route.showPics);
 app.get("/toUpload",route.toUpload); // 跳转上传页
 app.post("/doUpload",route.doUpload);
+app.get("/newDir",route.newDir); // 跳转
+app.post("/newDir",route.doCreate); // 新建
